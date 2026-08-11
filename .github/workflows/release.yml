@@ -1,0 +1,46 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Build EXE
+        shell: powershell
+        run: powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Build-ChineseFilenameTool.ps1
+
+      - name: Run tests
+        shell: powershell
+        run: powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Test-ChineseFilenameTool.ps1
+
+      - name: Create ZIP package
+        shell: powershell
+        run: |
+          New-Item -Path .\release -ItemType Directory -Force | Out-Null
+          Copy-Item .\ChineseFilenameTool.exe .\release\ChineseFilenameTool.exe
+          Copy-Item .\README.md .\release\README.md
+          Compress-Archive -Path .\release\* -DestinationPath .\ChineseFilenameTool.zip -Force
+
+      - name: Create or update GitHub Release
+        shell: powershell
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $tag = "${{ github.ref_name }}"
+          gh release view $tag *> $null
+          if ($LASTEXITCODE -eq 0) {
+            gh release upload $tag .\ChineseFilenameTool.exe .\ChineseFilenameTool.zip --clobber
+          } else {
+            gh release create $tag .\ChineseFilenameTool.exe .\ChineseFilenameTool.zip --title "ChineseFilenameTool $tag" --generate-notes
+          }
