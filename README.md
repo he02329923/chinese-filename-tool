@@ -20,3 +20,28 @@
 如果想移除右鍵功能，只要再次開啟 `ChineseFilenameTool.exe`，按下「刪除這個工具」即可。
 
 Windows 11 如果看不到右鍵選項，請先選擇「顯示更多選項」。
+
+
+
+# Windows Right-Click Chinese Filename Converter
+
+A Windows tool for converting filenames between Simplified Chinese and Traditional Chinese.
+
+## Features
+
+- Convert Simplified Chinese to Traditional Chinese
+- Convert Traditional Chinese to Simplified Chinese
+- Supports files and folders
+- Does not modify file contents
+
+## How to Use
+
+1. Download `ChineseFilenameTool.exe`.
+2. Double-click the program to open it.
+3. Click **Install this tool**.
+4. Right-click any file or folder.
+5. Choose **Convert filename to Traditional Chinese** or **Convert filename to Simplified Chinese**.
+
+To remove the right-click options, open `ChineseFilenameTool.exe` again and click **Delete this tool**.
+
+On Windows 11, select **Show more options** if you cannot see the right-click commands.
