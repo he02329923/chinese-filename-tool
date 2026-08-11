@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">ChineseFilenameTool feature overview</title>
+  <desc id="desc">A visual overview of the Windows right-click tool for converting filenames between Traditional and Simplified Chinese.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#101827"/>
+      <stop offset="1" stop-color="#1d3557"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff8a65"/>
+      <stop offset="1" stop-color="#e85d75"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#000000" flood-opacity=".25"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="680" rx="28" fill="url(#bg)"/>
+  <circle cx="1080" cy="-30" r="230" fill="#ffffff" opacity=".05"/>
+  <circle cx="80" cy="650" r="220" fill="#ff8a65" opacity=".08"/>
+
+  <g transform="translate(74 62)">
+    <rect width="74" height="74" rx="18" fill="url(#accent)"/>
+    <path d="M18 20h18v18H18zM38 38h18v18H38zM56 20h18v18H56zM18 56h18v18H18z" fill="#fff" opacity=".9"/>
+    <path d="M38 20h18v18H38zM56 56h18v18H56z" fill="#fff" opacity=".5"/>
+  </g>
+  <text x="174" y="98" fill="#ffffff" font-family="Segoe UI, Microsoft JhengHei, sans-serif" font-size="38" font-weight="700">ChineseFilenameTool</text>
+  <text x="78" y="174" fill="#d9e2f0" font-family="Segoe UI, Microsoft JhengHei, sans-serif" font-size="25">Windows 右鍵簡繁檔名雙向轉換工具</text>
+
+  <g filter="url(#shadow)" transform="translate(78 230)">
+    <rect width="1044" height="340" rx="22" fill="#f7f9fc"/>
+    <rect width="1044" height="52" rx="22" fill="#e9eef5"/>
+    <rect y="30" width="1044" height="22" fill="#e9eef5"/>
+    <circle cx="28" cy="26" r="7" fill="#ef6b6b"/>
+    <circle cx="52" cy="26" r="7" fill="#f3c75f"/>
+    <circle cx="76" cy="26" r="7" fill="#66c486"/>
+    <text x="34" y="112" fill="#203044" font-family="Segoe UI, Microsoft JhengHei, sans-serif" font-size="26" font-weight="700">檔名轉換工具</text>
+    <text x="34" y="151" fill="#69788b" font-family="Segoe UI, Microsoft JhengHei, sans-serif" font-size="18">選擇操作以安裝或移除 Windows 右鍵功能</text>
+    <rect x="34" y="190" width="448" height="78" rx="14" fill="#e85d75"/>
+    <text x="258" y="239" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, Microsoft JhengHei, sans-serif" font-size="24" font-weight="700">安裝這個工具</text>
+    <rect x="512" y="190" width="448" height="78" rx="14" fill="#eef1f5" stroke="#d6dde7"/>
+    <text x="736" y="239" text-anchor="middle" fill="#45566d" font-family="Segoe UI, Microsoft JhengHei, sans-serif" font-size="24" font-weight="700">刪除這個工具</text>
+  </g>
+
+  <text x="78" y="625" fill="#ffffff" opacity=".8" font-family="Segoe UI, Microsoft JhengHei, sans-serif" font-size="18">支援檔案與資料夾・保留副檔名・不修改檔案內容</text>
+</svg>
