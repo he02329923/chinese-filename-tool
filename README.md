@@ -24,17 +24,3 @@ Windows 11 如果看不到選項，請先選擇「顯示更多選項」。
 ## 轉換方式
 
 程式使用 Windows 內建中文轉換功能，並補充常見詞彙對照，例如「軟件／軟體」和「文件／檔案」。目前不是完整 OpenCC 詞庫。
-
-## 開發與測試
-
-重新建置 EXE：
-
-```powershell
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Build-ChineseFilenameTool.ps1
-```
-
-執行測試：
-
-```powershell
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Test-ChineseFilenameTool.ps1
-```
