@@ -2,6 +2,12 @@
 
 Windows 檔案名稱簡體中文／繁體中文雙向轉換工具。
 
+## 功能展示
+
+![ChineseFilenameTool 主程式畫面](feature-overview.svg)
+
+![ChineseFilenameTool 使用流程](usage-flow.svg)
+
 ## 下載
 
 請到 [Releases](https://github.com/he02329923/chinese-filename-tool/releases/latest) 下載最新版本的 `ChineseFilenameTool.exe` 或 ZIP 壓縮檔。
