@@ -23,12 +23,12 @@ function Install-MenuEntry {
 
     $baseKey = [Microsoft.Win32.Registry]::CurrentUser
     $menuPath = "$Root\shell\$Name"
-    $command = 'powershell.exe -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File "' + $converterPath + '" -Direction "' + $Direction + '" -Path "%1"'
+    $command = 'powershell.exe -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File "' + $converterPath + '" -Direction "' + $Direction + '" -Path "%1" %*'
     $menuKey = $baseKey.CreateSubKey($menuPath)
 
     try {
         $menuKey.SetValue('', $Label, [Microsoft.Win32.RegistryValueKind]::String)
-        $menuKey.SetValue('MultiSelectModel', 'Player', [Microsoft.Win32.RegistryValueKind]::String)
+        $menuKey.SetValue('MultiSelectModel', 'Document', [Microsoft.Win32.RegistryValueKind]::String)
         $commandKey = $menuKey.CreateSubKey('command')
         try {
             $commandKey.SetValue('', $command, [Microsoft.Win32.RegistryValueKind]::String)

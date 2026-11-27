@@ -182,7 +182,7 @@ namespace ChineseFilenameTool
                 using (RegistryKey menu = Registry.CurrentUser.CreateSubKey(root + "\\shell\\" + verb))
                 {
                     menu.SetValue("", label, RegistryValueKind.String);
-                    menu.SetValue("MultiSelectModel", "Player", RegistryValueKind.String);
+                    menu.SetValue("MultiSelectModel", "Document", RegistryValueKind.String);
                     using (RegistryKey commandKey = menu.CreateSubKey("command"))
                     {
                         commandKey.SetValue("", command, RegistryValueKind.String);
@@ -349,6 +349,11 @@ namespace ChineseFilenameTool
             lines.Add("\u5DF2\u91CD\u65B0\u547D\u540D\uFF1A" + result.Renamed.Count);
             lines.Add("\u7121\u9700\u8B8A\u66F4\uFF1A" + result.Skipped.Count);
             lines.Add("\u932F\u8AA4\uFF1A" + result.Errors.Count);
+            if (result.Renamed.Count > 0)
+            {
+                lines.Add(String.Empty);
+                lines.AddRange(result.Renamed);
+            }
             if (result.Errors.Count > 0)
             {
                 lines.Add(String.Empty);

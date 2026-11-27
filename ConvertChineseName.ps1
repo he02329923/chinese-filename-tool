@@ -108,11 +108,8 @@ $renamed = New-Object System.Collections.Generic.List[string]
 $skipped = New-Object System.Collections.Generic.List[string]
 $errors = New-Object System.Collections.Generic.List[string]
 
-foreach ($inputPath in $Path) {
+foreach ($inputPath in ($Path | Where-Object { -not [string]::IsNullOrWhiteSpace($_) } | Select-Object -Unique)) {
     try {
-        if ([string]::IsNullOrWhiteSpace($inputPath)) {
-            continue
-        }
 
         $item = Get-Item -LiteralPath $inputPath -Force -ErrorAction Stop
         $parent = Get-ParentDirectory -Item $item
